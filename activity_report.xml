@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Report">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Savings Report"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/electrolize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/colorPrimary"
+        app:itemTextColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_navigation" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="605dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chart1"
+                android:layout_width="match_parent"
+                android:layout_height="227dp">
+
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chart1"
+                android:layout_marginTop="0dp"
+                android:fadingEdge="horizontal"
+                android:gravity="center"
+                android:text="For Zip Code: "
+                android:textColor="#000000"
+                android:textSize="30sp"
+                app:fontFamily="@font/bungee"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/annualSavings"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/test2Result"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Panels And Energy:"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/annualSavingsResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/annualSavings"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Loading!\n Please Wait!"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/incentives"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/testResult"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Government Incentives:"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/incentivesResultState"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@+id/incentives"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="$1000 Arizona Tax Credit"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/incentivesResultFederal"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@+id/incentivesResultState"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="26%  Federal Tax Credit on Investment"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                app:fontFamily="@font/electrolize" />
+
+
+            <TextView
+                android:id="@+id/carbonEmission"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/incentivesResultFederal"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Estimated Carbon Footprint:"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/carbonEmissionResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/carbonEmission"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Loading!"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/ROE"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/annualSavingsResult"
+                android:layout_marginTop="1dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Return On Investment"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/testResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ROE"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Loading!"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/test2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/first"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Estimated Savings:"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/test2Result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/test2"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Loading!"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                app:fontFamily="@font/electrolize" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

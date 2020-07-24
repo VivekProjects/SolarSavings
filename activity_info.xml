@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Info">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Solar Information"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/electrolize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="605dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+            <!--fd -->
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="257dp"
+                app:srcCompat="@drawable/infor_iamge101"
+                tools:layout_editor_absoluteX="-6dp" />
+
+            <TextView
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="How the Solar Panels Work?"
+                android:textColor="#000000"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/electrolize"
+                android:layout_below="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/first"
+                android:fontFamily="sans-serif-black"
+                android:text="1. Solar panels convert the sunlight to DC(Direct Current) electricity."
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/electrolize" />
+
+            <ImageView
+                android:id="@+id/onepic"
+                android:layout_width="match_parent"
+                android:layout_height="257dp"
+                android:layout_below="@+id/one"
+                app:srcCompat="@drawable/dcac"
+                tools:layout_editor_absoluteX="-6dp" />
+
+            <TextView
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/onepic"
+                android:fontFamily="sans-serif-black"
+                android:text="2. The inverter converts the DC into AC (Alternating Current) electricity."
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/two"
+                android:fontFamily="sans-serif-black"
+                android:text="3. The house uses the AC electricity."
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/three"
+                android:fontFamily="sans-serif-black"
+                android:text="4. The meter installed by electrical company accounts for excess electricity that is not used by the house and sends it back to the electrical grid.\n"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                app:fontFamily="@font/electrolize" />
+
+            <TextView
+                android:id="@+id/energySageNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/four"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Panels to Energy Generatoion Annaully"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/electrolize" />
+
+            <ImageView
+                android:id="@+id/energySage"
+                android:layout_width="match_parent"
+                android:layout_height="257dp"
+                android:layout_below="@+id/energySageNote"
+                app:srcCompat="@drawable/energy_sage"
+                tools:layout_editor_absoluteX="-6dp" />
+
+
+
+        </RelativeLayout>
+</ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scroll"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/colorPrimary"
+        app:itemTextColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll"
+        app:menu="@menu/bottom_navigation" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
